@@ -13,7 +13,7 @@ The Bakery System is a web application designed to streamline bakery operations,
 - **User Authentication:** Secure login system to control access and protect sensitive information.
 
 ## Installation
-1. Make sure you have Node.js installed on your system. If not, you can download it from [Node.js Official Website](https://nodejs.org/).
+1. Make sure you have Node.js installed on your system. If not, you can download it from (https://github.com/uparfait/Nodejs-Mysql-Online-Breads-Ordering).
 2. Clone this repository to your local machine.
 3. Navigate to the project directory.
 4. Install dependencies using npm.
