@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ADMINSTRATOR</title>
+   <link rel="stylesheet" href="./index.css">
+   <link rel="shortcut icon" href="/app/beam-letter-b.png" type="image/x-icon">
+</head>
+<body>
+   <div class="viewer-top">DASHBOARD</div>
+   <div class="body">
+      <div class="viewr-leftside">
+         <div class="header">
+            <div class="adminImage"></div>
+            <div class="name">
+               WELCOME, <span id="name">Again</span>
+            </div>
+         </div>
+         <div class="lists">
+            <ul>
+               <li id="active" class="Overview">Overview</li>
+               <li class="Orders">Orders</li>
+               <li class="Popular">Popular</li>
+               <li class="Users">Users</li>
+               <li class="Add-product">Add product</li>
+               <li class="All-products">All products</li>
+            </ul>
+         </div>
+      </div>
+      <div class="viewer-rightside">
+         <div class="overview" id="container">
+            <div class="top">
+               <h1>MY DASHBOARD</h1>
+               <div class="center-div">
+                  <div class="users">
+                     <div id="text">Total Customers</div>
+                     <div id="total-c" class="totaln"></div>
+                  </div>
+                  <div class="products">
+                     <div id="text">Total Products</div>
+                     <div id="total-p" class="totaln"></div>
+                  </div>
+                  <div class="orders">
+                     <div id="text">Orders</div>
+                     <div id="total-o" class="totaln"></div>
+                  </div>
+                  <div class="admins">
+                     <div id="text">Adminstrators</div>
+                     <div id="total-a" class="totaln"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- orders -->
+         <div class="viewer-orders" id="container">
+            <h1>ALL ORDERS</h1>
+            <div class="table">
+               <div class="table-header">
+                  <div>Customer name</div>
+                  <div>product image</div>
+                  <div>product name</div>
+                  <div>product price</div>
+                  <div>product quantity</div>
+                  <div>customer quantity</div>
+                  <div>total amount</div>
+                  <div>delete order </div>
+               </div>
+               <div class="table-body"></div>
+            </div>
+         </div>
+         <!-- popular products -->
+         <div class="popularies" id="container">
+            <h1>
+               POPULAR PRODUCTS
+         </h1>
+            <div class="products">
+               <div class="table">
+                  <div class="table-header">
+                     <div>product image</div>
+                     <div>product name</div>
+                     <div>product price</div>
+                     <div>total purchased</div>
+                  </div>
+                  <div class="table-body"></div>
+               </div>
+            </div>
+         </div>
+         <!-- all users -->
+         <div class="all-users" id="container">
+            <h1>
+               CUSTOMERS
+         </h1>
+            <div class="customers">
+               <div class="table">
+                  <div class="table-header">
+                     <div>customer id</div>
+                     <div>customer name</div>
+                     <div>customer number</div>
+                     <div>customer district</div>
+                     <div>customer password</div>
+                  </div>
+                  <div class="table-body"></div>
+               </div>
+            </div>
+         </div>
+         <!-- add products -->
+         <div class="viewer-addproduct" id="container">
+            <h1>ADD PRODUCT</h1>
+            <div class="inner">
+               <form action="addproduct" method="post" enctype="multipart/form-data">
+                  <div class="image">
+                     <h1>SELECT IMAGE</h1>
+                     <div class="imagecontainer">
+                        <img src="" alt="" srcset="" class="imagesuploaded">
+                        <input type="file" name="productimage" id="pimage" required>
+                     </div>
+                  </div>
+                  <div class="product-details">
+                     <div class="name">
+                        <p>product name: </p>
+                        <input type="text" name="pname" id="pname" required>
+                     </div>
+                     <div class="price">
+                        <p>product price: </p>
+                        <input type="number" name="pprice" id="pprice" required>
+                        <p>RWF</p>
+                     </div>
+                     <div class="q">
+                        <p>p_quantity:&emsp;</p>
+                        <input type="number" name="quantity" id="quantity" required>
+                     </div>
+                     <div class="o">
+                        <p>Orders/0:&emsp;&emsp;</p>
+                        <input type="number" name="orders" id="order" value="0" required>
+                     </div>
+                     <div class="c">
+                        <p>Category:&emsp;&nbsp;</p>
+                        <input type="text" name="category" id="category" required>
+                     </div>
+                     <div class="desc">
+                        <p>description:&emsp; </p>
+                        <input type="text" name="pdesc" id="pdesc" required>
+                     </div>
+                     <div class="btn">
+                        <input type="submit" value="Add product">
+                        <input type="reset" value="Cancel">
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <!-- all products -->
+         <div class="viewr-allproducts" id="container">
+            <h1>ALL PRODUCTS</h1>
+            <div class="table">
+               <div class="table-header">
+                  <div>product id</div>
+                  <div>product image</div>
+                  <div>product name</div>
+                  <div>product price</div>
+                  <div>product quantity</div>
+                  <div>total orders</div>
+                  <div>modify</div>
+                  <div>delet</div>
+               </div>
+               <div class="table-body"></div>
+         </div>
+      </div>
+   </div>
+   <script src="./axios.min.js"></script>
+   <script src="./index.js"></script>
+</body>
+</html>

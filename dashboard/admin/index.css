@@ -1,0 +1,766 @@
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   user-select: none;
+}
+:root {
+   --bg-color: hsl(0, 100%, 100%);
+   --border-color: hsl(0, 0%, 93%);
+   --font-family: "Poppins", sans-serif;
+   --brand-color: hsl(16, 82%, 75%);
+   --footer-black: hsl(0, 0%, 13%);
+}
+html {
+   font-family: "Poppins", sans-serif;
+   -ms-scroll-chaining: none;
+       overscroll-behavior: contain;
+ }
+
+input::-webkit-input-placeholder { font: inherit; }
+input::-moz-placeholder { font: inherit; }
+input:-ms-input-placeholder { font: inherit; }
+input::-ms-input-placeholder { font: inherit; }
+input::placeholder { font: inherit; }
+
+body,html { 
+   background: var(--bg-color); 
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-left: 1px solid var(--border-color);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 80%);
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
+body>div{
+   position: relative;
+}
+.viewer-top {
+   width: 100%;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   place-items: center;
+   background: rgb(38, 39, 44);
+   color: #fff;
+}
+.body {
+   width: 100%;
+   height: calc(100% - 50px);
+   overflow: hidden;
+   display: inline-flex;
+   background-color: var(--bg-color);
+}.body {position: relative;height: 100%;}
+body::-webkit-scrollbar {
+   width: 0px;
+}
+.body .viewr-leftside {
+   width: 300px;
+   border-right: 1px solid var(--border-color);
+   background-color: #fff;
+}
+.body .viewr-leftside .header {
+   position: relative;
+   width: 100%;
+   height: 100px;
+   border-bottom: 1px solid var(--border-color);
+   display: flex;
+   align-items: center;
+}
+.body .viewr-leftside .header .adminImage {
+   position: relative;
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   left: 30px;
+   background-color: aliceblue;
+}
+.body .viewr-leftside .header .adminImage img {
+   width: 100%;
+   height: 100%;
+   border-radius: 50%;
+}
+.body .viewr-leftside .header .name {
+   position: absolute;
+   top: 30px;
+   right: 10px;
+   font-size: 14px;
+   font-weight: 550;
+   width: max-content;
+   color: rgba(32, 33, 41, 0.712);
+}
+.body .viewr-leftside .header .name>span{
+   color: var(--brand-color);
+}
+.lists {
+   position: relative;
+   width: 100%;
+   height: calc(100% - 100px);
+}
+.lists ul {
+   width: 100%;
+   list-style: none;
+}
+.lists ul li {
+   cursor: pointer;
+   transition: all .3s;
+   width: 100%;
+   text-indent: 20px;
+   padding: 15px 0px;
+   border-bottom: 1px solid var(--border-color);
+   color: rgba(32, 31, 37, 0.856);
+   font: 16px;
+   
+}
+.lists ul li:hover{
+   color: #fff;
+   background-color: var(--brand-color);
+}
+#active{
+   color: #fff;
+   background-color: var(--brand-color);
+}
+.viewer-rightside {
+   position: relative;
+   width: calc(100% - 300px);
+   background-color: #f9f9f9;
+   overflow-y: scroll;
+   overflow-x: hidden;
+}
+.viewer-rightside>div {
+   position: relative;
+   width: 100%;
+   height: max-content;
+   overflow: auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   padding-bottom: 100px;
+}
+.viewer-rightside .overview {
+   width: 100%;
+   height: max-content;
+   overflow: visible;
+}
+.viewer-rightside .overview .top{
+   position: relative;
+   width: 100%;
+   height: 180px;
+}
+.viewer-rightside .overview .top h1 {
+   width: 100%;
+   text-indent: 30px;
+   padding: 20px 0px;
+   font-size: 15px;
+   color: rgba(40, 42, 51, 0.753);
+}
+.viewer-rightside .overview .top .center-div {
+   position: relative;
+   width: 100%;
+   height: max-content;
+   display: inline-flex;
+   align-items: center;
+}
+.viewer-rightside .overview .top .center-div >div {
+   position: relative;
+   width: 230px;
+   height: 150px;
+   margin: 0px 15px;
+}
+.viewer-rightside .overview .top .center-div>div>#text{
+   position: absolute;
+   width: max-content;
+   height: max-content;
+   color: #fff;
+   bottom: 30px;
+   left: 15px;
+}
+.viewer-rightside .overview .top .center-div>div>.totaln{
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   font-weight: 550;
+   color: #fff;
+   font-size: 20px;
+   width: max-content;
+   height: max-content;
+}
+.users {
+   background-color:hsl(141, 62%, 70%);
+}
+.center-div .products {
+   background-color: hsl(0, 100%, 75%);
+}
+.orders {
+   background-color: hsl(264, 79%, 70%);
+}
+.admins {
+   background-color: hsl(200, 100%, 60%);
+}
+.users, .center-div .products,.orders,.admins {
+   border-radius: 6px;
+}
+.viewer-rightside .viewer-orders {
+   position: relative;
+   display: flex;
+   display: none;
+   flex-wrap: wrap;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+}
+
+.viewer-orders h1{
+   width: 100%;
+   text-indent: 30px;
+   padding: 20px 0px;
+   font-size: 15px;
+   color: rgba(40, 42, 51, 0.753);
+}
+.viewer-orders .table img {
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+}
+.viewer-orders .table {
+   position: relative;
+   background-color: var(--bg-color);
+   width: max-content;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+   left: 20px;
+   margin-top: 30px;
+   border-radius: 12px;
+}
+.viewer-orders .table .table-header {
+   position: relative;
+   display: inline-flex;
+   color: rgba(33, 34, 44, 0.884);
+   font-weight: 600;
+   
+}
+.viewer-orders .table .table-header div {
+   position: relative;
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+   width: 115px;
+   font-size: 12px;
+   height: 50px;
+}
+.viewer-orders .table .table-body{
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   height: max-content;
+   width: max-content;
+}
+.viewer-orders .table .table-body .tr {
+   position: relative;
+   display: inline-flex;
+}
+.viewer-orders .table .table-body .tr div{
+   position: relative;
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+   word-break: break-all;
+   overflow: hidden;
+   width: 115px;
+   font-size: 12px;
+   height: 50px;
+}
+.viewer-orders .table .table-body .tr div button {
+   width: 100%;
+   height: 100%;
+   cursor: pointer;
+   background-color: rgb(25, 27, 34);
+   outline: none;
+   border: none;
+   color: #fff;
+   transition: all .3s;
+   font-size: 16px;
+}
+.viewer-orders .table .table-body .tr div button:hover {
+   background-color: var(--brand-color);
+}
+
+.viewer-rightside .popularies {
+   position: relative;
+   display: flex;
+   display: none;
+   flex-wrap: wrap;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+}
+
+.viewer-rightside .popularies h1{
+   position: relative;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   text-indent: 30px;
+   padding: 20px 0px;
+   font-size: 15px;
+   color: rgba(40, 42, 51, 0.753);
+}
+.viewer-rightside .popularies .table img {
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+}
+.viewer-rightside .popularies .table {
+   position: relative;
+   background-color: var(--bg-color);
+   width: max-content;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+   left: 20px;
+   margin-top: 30px;
+   border-radius: 12px;
+}
+.viewer-rightside .popularies .table .table-header {
+   position: relative;
+   display: inline-flex;
+   color: rgba(33, 34, 44, 0.884);
+   font-weight: 600;
+   
+}
+.viewer-rightside .popularies .table .table-header div {
+   position: relative;
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+   width: 115px;
+   font-size: 12px;
+   height: 50px;
+}
+.viewer-rightside .popularies .table .table-body{
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   height: max-content;
+   width: max-content;
+}
+.viewer-rightside .popularies .table .table-body .tr {
+   position: relative;
+   display: inline-flex;
+}
+.viewer-rightside .popularies .table .table-body .tr div{
+   position: relative;
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+   width: 115px;
+   font-size: 12px;
+   height: 50px;
+}
+
+
+.viewer-rightside .all-users {
+   position: relative;
+   display: flex;
+   display: none;
+   flex-wrap: wrap;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+}
+
+.viewer-rightside .all-users h1{
+   width: 100%;
+   text-indent: 30px;
+   padding: 20px 0px;
+   font-size: 15px;
+   color: rgba(40, 42, 51, 0.753);
+}
+.viewer-rightside .all-users .table img {
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+}
+.viewer-rightside .all-users .table {
+   position: relative;
+   background-color: var(--bg-color);
+   width: max-content;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+   left: 20px;
+   margin-top: 30px;
+   border-radius: 12px;
+}
+.viewer-rightside .all-users .table .table-header {
+   position: relative;
+   display: inline-flex;
+   color: rgba(33, 34, 44, 0.884);
+   font-weight: 600;
+   
+}
+.viewer-rightside .all-users .table .table-header div {
+   position: relative;
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+   width: 200px;
+   font-size: 12px;
+   height: 50px;
+   word-break: break-all;
+   overflow: hidden;
+}
+.viewer-rightside .all-users .table .table-body{
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   height: max-content;
+   width: max-content;
+}
+.viewer-rightside .all-users .table .table-body .tr {
+   position: relative;
+   display: inline-flex;
+}
+.viewer-rightside .all-users .table .table-body .tr div{
+   position: relative;
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+   width: 200px;
+   font-size: 12px;
+   height: 50px;
+   word-break: break-all;
+   overflow: hidden;
+}
+
+.viewer-rightside .viewr-allproducts {
+   position: relative;
+   display: flex;
+   display: none;
+   flex-wrap: wrap;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+}
+
+.viewer-rightside .viewr-allproducts h1{
+   width: 100%;
+   text-indent: 30px;
+   padding: 20px 0px;
+   font-size: 15px;
+   color: rgba(40, 42, 51, 0.753);
+}
+.viewer-rightside .viewr-allproducts .table img {
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+}
+.viewer-rightside .viewr-allproducts .table {
+   position: relative;
+   background-color: var(--bg-color);
+   width: max-content;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+   left: 20px;
+   margin-top: 30px;
+   border-radius: 12px;
+}
+.viewer-rightside .viewr-allproducts .table .table-header {
+   position: relative;
+   display: inline-flex;
+   color: rgba(33, 34, 44, 0.884);
+   font-weight: 600;
+   
+}
+.viewer-rightside .viewr-allproducts .table .table-header div {
+   position: relative;
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+   width: 125px;
+   font-size: 12px;
+   height: 50px;
+   word-break: break-all;
+   overflow: hidden;
+}
+.viewer-rightside .viewr-allproducts .table .table-body{
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   height: max-content;
+   width: max-content;
+}
+.viewer-rightside .viewr-allproducts .table .table-body .tr {
+   position: relative;
+   display: inline-flex;
+}
+.viewer-rightside .viewr-allproducts .table .table-body .tr div{
+   position: relative;
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+   width: 125px;
+   font-size: 12px;
+   height: 50px;
+   word-break: break-all;
+   overflow: hidden;
+}
+.viewer-rightside .viewr-allproducts .table .table-body .tr div button {
+   width: 100%;
+   height: 100%;
+   cursor: pointer;
+   background-color: rgb(25, 27, 34);
+   outline: none;
+   border: none;
+   color: #fff;
+   transition: all .3s;
+   font-size: 16px;
+}
+.viewer-rightside .viewr-allproducts .table .table-body .tr div button:hover {
+   background-color: var(--brand-color);
+}
+.viewer-rightside .viewer-addproduct {
+   position: relative;
+   display: flex;
+   display: none;
+   justify-content: center;
+   place-items: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+.viewer-rightside .viewer-addproduct> h1 {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   color: rgba(48, 46, 58, 0.829);
+   font-size: 14px;
+   padding: 30px 0px;
+   text-indent: 30px;
+}
+.viewer-rightside .viewer-addproduct .inner {
+   width: max-content;
+   height: max-content;
+   border-radius: 12px;
+   padding: 20px;
+   background-color: #fff;
+   box-shadow: 0px 0px 12px rgba(128, 128, 128, 0.164);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+   margin-top: 20px;
+}.viewer-rightside .viewer-addproduct .inner form .image input{
+   display: none;
+}
+.viewer-rightside .viewer-addproduct .inner form .image {
+   position: relative;
+   width: 300px;
+   height: 200px;
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+}
+.viewer-rightside .viewer-addproduct .inner form .image h1 {
+   position: absolute;
+   color: rgba(128, 128, 128, 0.836);
+   font-size: 13px;
+   top: -6px;
+   background-color: #fff;
+}
+.viewer-rightside .viewer-addproduct .inner form .image .imagecontainer {
+   position: relative;
+   width: 80%;
+   height: 50%;
+   border: 1px solid var(--border-color);
+   display: flex;
+   place-items: center;
+   justify-content: center;
+   overflow: hidden;
+   color: rgba(128, 128, 128, 0.322);
+   font-size: 12px;
+   cursor: pointer;
+}
+.viewer-rightside .viewer-addproduct .inner form .image .imagecontainer::after {
+   content: "click to add";
+}
+.viewer-rightside .viewer-addproduct .inner form .image .imagecontainer img {
+   width: 100%;
+   height: 100%;
+   border: none;
+   position: absolute;
+}
+.viewer-rightside .viewer-addproduct .inner form .product-details {
+   position: relative;
+   width: max-content;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+}
+.viewer-rightside .viewer-addproduct .inner form .product-details >div{
+   position: relative;
+   margin: 10px 0px;
+   display: inline-flex;
+   place-items: center;
+   width: 400px;
+}
+.viewer-rightside .viewer-addproduct .inner form .product-details >div p{
+   color: rgba(40, 40, 48, 0.877);
+   font-size: 14px;
+}
+.viewer-rightside .viewer-addproduct .inner form .product-details .btn input {
+   position: relative;
+   width: 100px;
+   height: 40px;
+   border: none;
+   outline: none;
+   border-radius: 4px;
+   background-color: black;
+   font-size: 13px;
+   color: #fff;
+   cursor: pointer;
+   margin: 0px 30px;
+   transition:  all .3s;
+}
+.viewer-rightside .viewer-addproduct .inner form .product-details .btn input:hover {
+   background-color: var(--brand-color);
+}
+.viewer-rightside .viewer-addproduct .inner form .product-details >div>input[type="text"],
+.viewer-rightside .viewer-addproduct .inner form .product-details >div>input[type="number"] {
+   height: 30px;
+   width: 200px;
+   margin: 0px 5px;
+   outline: none;
+   border: 1px solid var(--border-color);
+   border-radius: 6px;
+}
+.update {
+   position: fixed;
+   width: 100%;
+   height: calc(100% - 50px);
+   display: flex;
+   place-items: center;
+   justify-content: center;
+   background-color: black;
+   z-index: 1000;
+   bottom: 0px;
+   left: 0px;
+}
+
+.update .inner {
+   width: max-content;
+   height: max-content;
+   border-radius: 12px;
+   padding: 20px;
+   background-color: #fff;
+   margin-top: 20px;
+   box-shadow: 0px 0px 12px rgba(128, 128, 128, 0.164);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+}.update .inner form .image input{
+   display: none;
+}
+.update .inner form .image {
+   position: relative;
+   width: 300px;
+   height: 200px;
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: center;
+   place-items: center;
+}
+.update .inner form .image h1 {
+   position: absolute;
+   color: rgba(128, 128, 128, 0.836);
+   font-size: 13px;
+   top: -6px;
+   background-color: #fff;
+}
+.update .inner form .image .imagecontainer {
+   position: relative;
+   width: 80%;
+   height: 50%;
+   border: 1px solid var(--border-color);
+   display: flex;
+   place-items: center;
+   justify-content: center;
+   overflow: hidden;
+   color: rgba(128, 128, 128, 0.322);
+   font-size: 12px;
+   cursor: pointer;
+}
+.update .inner form .image .imagecontainer::after {
+   content: "click to add";
+}
+.update .inner form .image .imagecontainer img {
+   width: 100%;
+   height: 100%;
+   border: none;
+   position: absolute;
+}
+.update .inner form .product-details {
+   position: relative;
+   width: max-content;
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+}
+.update .inner form .product-details >div{
+   position: relative;
+   margin: 10px 0px;
+   display: inline-flex;
+   place-items: center;
+   width: 400px;
+}
+.update .inner form .product-details >div p{
+   color: rgba(40, 40, 48, 0.877);
+   font-size: 14px;
+}
+.update .inner form .product-details .btn input {
+   position: relative;
+   width: 100px;
+   height: 40px;
+   border: none;
+   outline: none;
+   border-radius: 4px;
+   background-color: black;
+   font-size: 13px;
+   color: #fff;
+   cursor: pointer;
+   margin: 0px 30px;
+   transition:  all .3s;
+}
+.update .inner form .product-details .btn input:hover {
+   background-color: var(--brand-color);
+}
+.update .inner form .product-details >div>input[type="text"],
+.update .inner form .product-details >div>input[type="number"] {
+   height: 30px;
+   width: 200px;
+   margin: 0px 5px;
+   outline: none;
+   border: 1px solid var(--border-color);
+   border-radius: 6px;
+}

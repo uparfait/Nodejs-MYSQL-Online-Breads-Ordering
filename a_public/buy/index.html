@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>buy Product</title>
+   <link rel="shortcut icon" href="/app/beam-letter-b.png" type="image/x-icon">
+   <link rel="stylesheet" href="./buy.css">
+</head>
+<body>
+   <div class="viewer">
+      <!-- fixed top navbar -->
+      <div class="viewer-topnav">
+         <!-- above nav -->
+         <div class="viewer-above">
+            <div class="dots">
+               <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="viewer-top-center">
+               <p>FREE DELIVERING FOR NEW USERS</p>
+            </div>
+            <div class="viewer-right-account">
+               <div class="btn-control">
+               </div>
+               <div class="loggedin">
+                  <div class="profile"></div>
+               </div>
+            </div>
+         </div>
+         <!-- search panel -->
+         <div class="viewer-search">
+         <!-- left logo -->
+         <div class="viewer-leftlog">
+            <h2>XM Bakery</h2>
+         </div>
+            <form action="/search" method="get">
+               <div class="inputs">
+                  <input type="search" name="search-products" id="search-products" placeholder="search...">
+                  <input type="submit" value="search" id="pull">
+                  <div class="fetch-results">
+                  </div>
+               </div>
+               <!-- categories -->
+               <div class="viewer-categories">
+                  <div class="top">
+                     <span class="desc">FILTER: </span>
+                     <span class="selected">All</span>
+                     <input type="text" name="category" id="cat-inp" value="ALL">
+                  </div>
+                  <div class="all-categories" id="filter">
+                     <div class="viewer-amount">
+                        <p id="price-desc">Price </p>
+                        <span class="min">min: </span>
+                        <input type="number" name="min" id="min" min="100">
+                        <span class="min">max: </span>
+                        <input type="number" name="max" id="max" min="100">
+                     </div>
+                  </div>
+               </div>
+            </form>
+            <div class="null"></div>
+         </div>
+
+      </div>
+       <!-- fixed top navbar end-->
+       <div class="null-content"></div>
+        <!-- center body -->
+        <div class="viewer-buy">
+         <div class="viewer-p-nav">
+            <ul>
+               <li><a href="/">HOME</a></li>
+               <li><a href="/populars">POPULAR</a></li>
+               <li><a href="/offers">HOT OFFER'S</a></li>
+               <li><a href="/history">HISTORY</a></li>
+            </ul>
+         </div>
+         <div class="pimage">
+            <img src="" alt="" class="Pimage">
+         </div>
+         <div class="pname">
+            <h1></h1>
+         </div>
+         <div class="pdesc">
+         </div>
+         <div class="pprice">Price: <span></span>frw</div>
+         <div class="tips">
+            <div class="h2">TIPS: </div>
+            <ol>
+               <li>Select product quantity</li>
+               <li>You will be recharged according to product quantity</li>
+               <li>After click buy button wait until confirmation</li>
+               <li>Dervering is free for new users</li>
+               <li>Price will be payed to seller who brings product to you</li>
+            </ol>
+         </div>
+         <div class="buyCont">
+            <form action="/purchasing/" method="get">
+               <div class="q">
+                  Enter quantity: 
+                  <input type="number" name="quantity" id="q" value="1">
+                  <input type="text" name="product" class="pid" style="position: fix;top:-3000px;opacity:0">
+               </div>
+               <div class="total" style="display: none;"></div>
+                  <button type="submit">buy it</button>
+            </form>
+         </div>
+        </div>
+        <div class="hidden-btns">
+         <div> <a href="/"><img src="/app/home.png" alt="" srcset=""></a></div>
+          <div><a href="/populars"><img src="/app/popular.png" alt="" srcset=""></a></div>
+          <div><a href="/offers"><img src="/app/hot.png" alt="" srcset=""></a></div>
+         <div> <a href="/history"><img src="/app/pending.png" alt="" srcset=""></a></div>
+          <div><a href="/customer/logout"><img src="/app/account.png" alt="" srcset=""></a></div>
+         </div>
+        <!-- center body end-->
+        <div class="undefined"></div>
+        </div>
+        <script src="./axios.min.js"></script>
+        <script src="./api.js"></script>
+</body>
+</html>

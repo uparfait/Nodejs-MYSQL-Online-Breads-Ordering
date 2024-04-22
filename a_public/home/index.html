@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Bakery System</title>
+   <link rel="shortcut icon" href="/app/beam-letter-b.png" type="image/x-icon">
+   <link rel="stylesheet" href="./design/home.css">
+</head>
+<body>
+   <div class="viewer">
+      <!-- fixed top navbar -->
+      <div class="viewer-topnav">
+         <!-- above nav -->
+         <div class="viewer-above">
+            <div class="dots">
+               <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="viewer-top-center">
+               
+               <p>FREE DELIVERING FOR NEW USERS</p>
+            </div>
+            <div class="viewer-right-account">
+               <div class="btn-control">
+               </div>
+               <div class="loggedin">
+                  <div class="profile"></div>
+               </div>
+            </div>
+         </div>
+         <!-- search panel -->
+         <div class="viewer-search">
+         <!-- left logo -->
+         <div class="viewer-leftlog">
+            <h2>XM Bakery</h2>
+         </div>
+            <form action="/search" method="get">
+               <div class="inputs">
+                  <input type="search" name="search-products" id="search-products" placeholder="search...">
+                  <input type="submit" value="search" id="pull">
+                  <div class="fetch-results">
+                  </div>
+               </div>
+               <!-- categories -->
+               <div class="viewer-categories">
+                  <div class="top">
+                     <span class="desc">FILTER: </span>
+                     <span class="selected">All</span>
+                     <input type="text" name="category" id="cat-inp" value="ALL">
+                  </div>
+                  <div class="all-categories" id="filter">
+                     <div class="viewer-amount">
+                        <p id="price-desc">Price </p>
+                        <span class="min">min: </span>
+                        <input type="number" name="min" id="min" min="100">
+                        <span class="min">max: </span>
+                        <input type="number" name="max" id="max" min="100">
+                     </div>
+                  </div>
+               </div>
+            </form>
+            <div class="null"></div>
+         </div>
+
+      </div>
+       <!-- fixed top navbar end-->
+       <div class="null-content"></div>
+        <!-- center body -->
+       <div class="viewer-products">
+
+         <div class="viewer-p-nav">
+            <ul>
+               <li><a href="/" id="active">HOME</a></li>
+               <li><a href="/populars">POPULAR</a></li>
+               <li><a href="/offers">HOT OFFER'S</a></li>
+               <li><a href="/history">HISTORY</a></li>
+            </ul>
+         </div>
+         <div class="viewer-wrapper">
+            <div class="wrapper-product" data-productId="35gdy73sq">
+               <div class="img">
+                  <img src="/wrapper/CA_BBQ_Brisket.png" alt="" srcset="" class="wrappermg">
+                  <img src="/wrapper/CA_Biscuit_BEC.png" alt="" srcset="" class="wrappermg">
+                  <img src="/wrapper/MicrosoftTeams-image-5.jpg" alt="" srcset="" class="wrappermg">
+               </div>
+               <div class="description">
+                  <div class="title">
+                     XM BAKERY
+                  </div>
+                  <h4>Best Seller in #Baking</h4>
+                  <div class="intro">
+                     <div class="code">
+                        <code>Most delicacy breads, pizzas, donats</code><br>
+                        <code>Free delivery and discounts and entrusted service</code>
+                     </div>
+                  </div>
+                  <h4>Enjoy With Us... 🍔</h4>
+               </div>
+            </div>
+         </div>
+         </div>
+        <div class="center">
+
+          <div class="left-contents">
+
+            <div class="categories" id="categories"><h1>CATEGORIES</h1></div>
+            <div class="populars" id="populars"><h1>POPULAR</h1></div>
+         </div>
+         <div class="right-content"></div>
+        </div>
+        <div class="hidden-btns">
+        <div> <a href="/"><img src="/app/home.png" alt="" srcset=""></a></div>
+         <div><a href="/populars"><img src="/app/popular.png" alt="" srcset=""></a></div>
+         <div><a href="/offers"><img src="/app/hot.png" alt="" srcset=""></a></div>
+        <div> <a href="/history"><img src="/app/pending.png" alt="" srcset=""></a></div>
+         <div><a href="/customer/logout"><img src="/app/account.png" alt="" srcset=""></a></div>
+        </div>
+       <!-- center body end-->
+       <div class="undefined"></div>
+   </div>
+   <script src="./static/axios.min.js"></script>
+   <script src="./static/api.js"></script>
+</body>
+</html>
